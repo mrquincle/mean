@@ -18,7 +18,7 @@ module.exports = {
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'MEAN - A Modern Stack - Development'
+      name: 'Dodedodo - A Distributed Market Place'
     },
     facebook: {
       clientID: "APP_ID",
@@ -39,6 +39,11 @@ module.exports = {
       clientID: "APP_ID",
       clientSecret: "APP_SECRET",
       callbackURL: "http://localhost:3000/auth/google/callback"
+    },
+    sense: {
+      clientID: process.env.SENSE_CONSUMER_KEY,
+      clientSecret: process.env.SENSE_CONSUMER_SECRET,
+      callbackURL: "http://localhost:3000/auth/sense/callback"
     },
   },
   test: {
@@ -46,7 +51,7 @@ module.exports = {
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'MEAN - A Modern Stack - Test'
+      name: 'Dodedodo - A Distributed Market Place'
     },
     facebook: {
       clientID: "APP_ID",
@@ -67,14 +72,19 @@ module.exports = {
       clientID: "APP_ID",
       clientSecret: "APP_SECRET",
       callbackURL: "http://localhost:3000/auth/google/callback"
-    }
+    },
+    sense: {
+      clientID: process.env.SENSE_CONSUMER_KEY,
+      clientSecret: process.env.SENSE_CONSUMER_SECRET,
+      callbackURL: "http://localhost:3000/auth/sense/callback"
+    },
   },
   production: {
     db: 'mongodb://localhost/mean',
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'MEAN - A Modern Stack - Production'
+      name: 'Dodedodo - A Distributed Market Place'
     },
     facebook: {
       clientID: "APP_ID",
@@ -95,6 +105,11 @@ module.exports = {
       clientID: "APP_ID",
       clientSecret: "APP_SECRET",
       callbackURL: "http://localhost:3000/auth/google/callback"
-    }
+    },
+    sense: {
+      clientID: process.env.SENSE_CONSUMER_KEY,
+      clientSecret: process.env.SENSE_CONSUMER_SECRET,
+      callbackURL: "http://localhost:3000/auth/sense/callback"
+    },
   }
 }

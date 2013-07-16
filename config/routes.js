@@ -18,6 +18,8 @@ module.exports = function (app, passport, auth) {
   app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/signin' }), users.authCallback)
   app.get('/auth/twitter', passport.authenticate('twitter', { failureRedirect: '/signin' }), users.signin)
   app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/signin' }), users.authCallback)
+  app.get('/auth/sense', passport.authenticate('sense', { failureRedirect: '/signin' }), users.signin)
+  app.get('/auth/sense/callback', passport.authenticate('sense', { failureRedirect: '/signin' }), users.authCallback)
   app.get('/auth/google', passport.authenticate('google', { failureRedirect: '/signin', scope: 'https://www.google.com/m8/feeds' }), users.signin)
   app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/signin', scope: 'https://www.google.com/m8/feeds' }), users.authCallback)
 

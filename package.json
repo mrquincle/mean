@@ -1,9 +1,9 @@
 {
-    "name": "mean"
-  , "description": "Mongo"
+    "name": "dodedodo"
+  , "description": "Dodedodo - A Distributed Market Place"
   , "version": "1.0.0"
   , "private": false
-  , "author": "MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support)."
+  , "author": "Dodedodo - A Distributed Market Place"
   , "engines": {
         "node": "0.10.x"
       , "npm":  "1.2.x"
@@ -24,6 +24,7 @@
     , "passport-twitter": "latest"
     , "passport-github": "latest"
     , "passport-google-oauth": "latest"
+    , "passport-sense": "latest"
     , "imager": "latest"
     , "notifier": "latest"
     , "underscore": "latest"

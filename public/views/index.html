@@ -1,3 +1,74 @@
 <section data-ng-controller="IndexController">
-	<h1>This is the home view</h1>
+
+	<h1>Dodedodo</h1><br/>
+	<p>Dodedodo is a distributed market place that allows you to run applications across a wide range of devices. Suppose, you want to use the camera on your Android phone, connect it to face recognition software on the internet, and have your own door opener based on Arduino to finally open the door for you. This is all possible with off-the-shelf software! But setting it up is really hard.</p>
+	
+	<br/>
+
+	<h2>What is this in general?</h2>
+	<p>Dodedodo uses a standard format to describe software modules. These modules can be connected with each other through a graphical user interface. The modules are found through crawling or when people submit their github repository. The modules run on servers online and on your own devices.</p>
+	
+	<div class="span12">
+	<form ng-submit="submit()" ng-controller="EmailCtrl">
+
+		<button type="submit" class="btn btn-primary btn-large"><i class="icon-white icon-envelope"></i> Your github repos</button>
+		<button class="btn btn-primary btn-large" disabled><i class="icon-white icon-envelope"></i> Your github repos</button> 
+
+		<input type="text" class="input-xxlarge" placeholder="https://github.com/yours" ng-model="contact.subject" required>
+
+		<span ng-show="send">
+			<div class="alert alert-success span10">
+				  Thanks! You will definitely hear from us!
+			</div>
+		</span>
+		<span ng-show="failure">
+			<div class="alert alert-error span10">
+				Sorry, something went wrong in the backend, please send an email! Our sincere apologies!
+			</div>
+		</span>
+	</form>
+	</div>
+	
+	<br/>
+	<br/>
+	<br/>
+
+	<h2>Can I see something?</h2>
+	<p>We have been working on a range of software and are able to control a wide range of devices (see below for the Romo). However, we would like you to be able to do so as well!<p>
+	<section class="row">
+	<div class="span6">
+			<div class="flex-video widescreen"><iframe src="https://www.youtube-nocookie.com/embed/wCX6XXzhrCM" frameborder="0" allowfullscreen=""></iframe></div>
+	</div>
+	</section>
+	<br/>
+
+	<h2>What is this exactly?</h2>
+	<p>Dodedodo will feature as a market place hub for applications that have modules that can run on your Raspberry PI, your Android smartphone, your Arduino do-it-yourself chip, your robots, as well as on servers on the internet. It is extremely powerful at one hand:
+	<ul>
+		<li>Automatic generation of glue-code for wide range of middleware: YARP, ROS, ZeroMQ, NodeJS</li>
+		<li>Compiles for many devices: ARM (Android), Blackfin (robots), ARM-HF (Raspberry PI)</li>
+		<li>Allows you to add your own modules</li>
+		<li>Allows deployment on your own server park</li>
+	</ul>
+	</p>
+	
+	<p>It is extremely restricted at the other hand:
+	<ul>
+		<li>The modules themselves are in C++</li>
+	</ul>
+	The code of the module itself is currently in C++. This means that this module will run on every platform that has a C++ compiler, which are many. It does not mean that you cannot use other languages. The NodeJS backend is a good example, where glue code is generated that allows you to use the module from Javascript. However, to use that same module also on a robot, we have to enforce the language of the module itself to be C++.
+	</p>
+	<br/>
+
+	<h2>What does this require from the user?</h2>
+	<p>
+	The user will be able to search for cool schemes that exist out of multiple modules. Those modules have to be dragged to devices the user owns. So, this is slightly more involved than installation of a normal app on a smartphone. On all the devices the user registers there will be a small application that allows modules to be launched, stopped, and connected with other modules. This application is called an AIM agent. The user does not have to worry about firewalls, or anything else, just installing the AIM agent on a Raspberry PI, or an Android smartphone is all.
+	</p>
+	<br/>
+
+	<h2>What can I do?</h2>
+	<p>
+	We will be very greatful if you want to be our user. This is definitely free and allows us to build an amazing service. We are not a large company so we can effort to spend an excessive amount of attention towards making you a satisfied user. Please, contact us, if you have a nice idea! Also general ideas for our <a href="http://www.dobots.nl/team">small and agile :-) dobots team</a> you can just contact us on <a href="http://www.dobots.nl/contact">our contact page</a> or on <a href="https://github.com/mrquincle">github</a> where also an email address is listed.
+	</p>
+	<br/>
 </section>

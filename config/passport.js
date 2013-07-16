@@ -5,6 +5,7 @@ var mongoose = require('mongoose')
   , FacebookStrategy = require('passport-facebook').Strategy
   , GitHubStrategy = require('passport-github').Strategy
   , GoogleStrategy = require('passport-google-oauth').Strategy
+  , SenseStrategy = require('passport-sense').Strategy
   , User = mongoose.model('User')
 
 
@@ -56,6 +57,35 @@ module.exports = function (passport, config) {
             , username: profile.username
             , provider: 'twitter'
             , twitter: profile._json
+          })
+          user.save(function (err) {
+            if (err) console.log(err)
+            return done(err, user)
+          })
+        }
+        else {
+          return done(err, user)
+        }
+      })
+    }
+  ))
+
+  // use sense strategy
+  passport.use(new SenseStrategy({
+        consumerKey: config.sense.clientID
+      , consumerSecret: config.sense.clientSecret
+      , callbackURL: config.sense.callbackURL
+    },
+    function(accessToken, refreshToken, profile, done) {
+      User.findOne({ 'sense.id': profile.id }, function (err, user) {
+        if (err) { return done(err) }
+        if (!user) {
+          user = new User({
+              name: profile.username
+            , email: profile.emails[0].value
+            , username: profile.username
+            , provider: 'sense'
+            , sense: profile._json
           })
           user.save(function (err) {
             if (err) console.log(err)
